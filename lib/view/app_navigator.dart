@@ -1,11 +1,9 @@
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_background/use_cases/bloc/navigator/app_navigator_cubit.dart';
-import 'package:flutter_background/view/pages/backgrounds/bubble_behaviour.dart';
-import 'package:flutter_background/view/pages/backgrounds/racing_bahaviour.dart';
-import 'package:flutter_background/view/pages/backgrounds/random_behaviour.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'pages/background_pages.dart';
 import 'pages/home_page.dart';
 
 class AppNavigator extends StatelessWidget {

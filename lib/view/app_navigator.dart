@@ -17,9 +17,9 @@ class AppNavigator extends StatelessWidget {
       state: context.select<AppNavigatorCubit, AppNavigatorState>((cubit) => cubit.state),
       onGeneratePages: (state, pages) => state.map(
         initial: (_) => [HomePage.page()],
-        bubble: (_) => [HomePage.page(), BubbleBehaviour.page()],
-        racing: (_) => [HomePage.page(), RacingBehaviour.page()],
-        random: (_) => [HomePage.page(), RandomBehaviour.page()],
+        bubble: (_) => [BubbleBehaviour.page()],
+        racing: (_) => [RacingBehaviour.page()],
+        random: (_) => [RandomBehaviour.page()],
       ),
     );
   }

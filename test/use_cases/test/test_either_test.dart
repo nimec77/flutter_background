@@ -22,6 +22,14 @@ void main() {
     expect(value, 42);
   });
 
+  test('Either test right value throw operator |', () {
+    final result = testEither.test();
+
+    final value = result | 0;
+
+    expect(value, 42);
+  });
+
   test('Either test left', () {
     final result = testEither.test(isRight: false);
 
@@ -33,7 +41,11 @@ void main() {
       expect(exception, isA<Exception>());
       expect(exception.toString(), 'Exception: Test error');
     });
+  });
 
-
+  test('Either test left value throw fold', () {
+    final result = testEither.test(isRight: false).fold((l) => l, (_) => throw AssertionError("Can't get Left"));
+    expect(result, isA<Exception>());
+    expect(result.toString(), 'Exception: Test error');
   });
 }

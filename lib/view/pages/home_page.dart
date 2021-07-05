@@ -34,7 +34,9 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
               CustomButton(
                 mainButtonText: 'Bubble Behaviour',
-                callbackTertiary: () => context.read<AppNavigatorCubit>().bubble(),
+                callbackTertiary: () {
+                  context.read<AppNavigatorCubit>().bubble();
+                },
                 color: Colors.blue,
               ),
               const SizedBox(height: 20),

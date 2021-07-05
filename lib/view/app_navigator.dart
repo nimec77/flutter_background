@@ -13,12 +13,15 @@ class AppNavigator extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlowBuilder<AppNavigatorState>(
       state: context.select<AppNavigatorCubit, AppNavigatorState>((cubit) => cubit.state),
-      onGeneratePages: (state, pages) => state.map(
-        initial: (_) => [HomePage.page()],
-        bubble: (_) => [HomePage.page(), BubbleBehaviour.page()],
-        racing: (_) => [HomePage.page(), RacingBehaviour.page()],
-        random: (_) => [HomePage.page() ,RandomBehaviour.page()],
-      ),
+      onGeneratePages: (state, pages) => [
+          HomePage.page(),
+          if (state is AppNavigatorStateBubble)
+            BubbleBehaviour.page()
+          else if (state is AppNavigatorStateRacing)
+            RacingBehaviour.page()
+          else if (state is AppNavigatorStateRandom)
+            RandomBehaviour.page()
+        ],
     );
   }
 }

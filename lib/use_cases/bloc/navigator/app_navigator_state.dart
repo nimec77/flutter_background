@@ -2,6 +2,7 @@ part of 'app_navigator_cubit.dart';
 
 abstract class AppNavigatorState {}
 
+@immutable
 class AppNavigatorStateInitial extends AppNavigatorState {
 
   @override
@@ -17,6 +18,7 @@ class AppNavigatorStateInitial extends AppNavigatorState {
 
 }
 
+@immutable
 class AppNavigatorStateBubble extends AppNavigatorState {
   @override
   String toString() => 'AppNavigatorStateBubble';
@@ -28,6 +30,7 @@ class AppNavigatorStateBubble extends AppNavigatorState {
   int get hashCode => toString().hashCode;
 }
 
+@immutable
 class AppNavigatorStateRacing extends AppNavigatorState {
   @override
   String toString() => 'AppNavigatorStateRacing';
@@ -39,6 +42,7 @@ class AppNavigatorStateRacing extends AppNavigatorState {
   int get hashCode => toString().hashCode;
 }
 
+@immutable
 class AppNavigatorStateRandom extends AppNavigatorState {
   @override
   String toString() => 'AppNavigatorStateRandom';
